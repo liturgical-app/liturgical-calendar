@@ -109,11 +109,11 @@ print(dayinfo['colour'])
 ## Issues
 
 If you find bugs (either in the code or in the calendar), please
-[create an issue on GitHub](https://github.com/liturgical-app/calendar/issues).
+[create an issue on GitHub](https://github.com/liturgical-app/liturgical-calendar/issues).
 
 Pull requests are always welcome, either to address bugs or add new features.
 
 ## Example
 
 There is a sample app which uses this library called
-[Liturgical Colour App](https://github.com/djjudas21/liturgical-colour-app).
+[Liturgical Colour App](https://github.com/liturgical-app/liturgical-app).
