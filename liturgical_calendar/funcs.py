@@ -132,7 +132,7 @@ def colour_code(colour: str) -> str:
         The corresponding hex code for the named colour
     """
     codes = {
-        'white': '#ffffff',
+        'white': '#fffff6',
         'red': '#ce0002',
         'rose': '#eb597a',
         'purple': '#664fa6',

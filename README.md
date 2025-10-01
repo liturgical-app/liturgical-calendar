@@ -88,7 +88,7 @@ weekno : 3
 week : Epiphany 3
 date : 2023-01-25
 colour : white
-colourcode : #ffffff
+colourcode : #fffff6
 ember : 0
 ```
 
