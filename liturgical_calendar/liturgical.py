@@ -106,6 +106,26 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         season = 'Pentecost'
         season_url = 'https://en.wikipedia.org/wiki/Ordinary_Time'
         weekno = 0
+    elif christmas_point >= advent_sunday -28 and christmas_point < advent_sunday -21:
+        # "Before Advent" weeks
+        season = '4 before Advent'
+        season_url = ''
+        weekno = 0
+    elif christmas_point >= advent_sunday -21 and christmas_point < advent_sunday -14:
+        # "Before Advent" weeks
+        season = '3 before Advent'
+        season_url = ''
+        weekno = 0
+    elif christmas_point >= advent_sunday -14 and christmas_point < advent_sunday -7:
+        # "Before Advent" weeks
+        season = '2 before Advent'
+        season_url = ''
+        weekno = 0
+    elif christmas_point >= advent_sunday -7 and christmas_point < advent_sunday:
+        # "Before Advent" weeks
+        season = 'Sunday next before Advent'
+        season_url = ''
+        weekno = 0
     else:
         # Period of Ordinary Time after Pentecost
         season = 'Trinity'
