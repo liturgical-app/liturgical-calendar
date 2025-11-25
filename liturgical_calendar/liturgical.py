@@ -84,11 +84,15 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         season = 'Epiphany'
         season_url = 'https://en.wikipedia.org/wiki/Epiphany_season'
         weekno = 1 + (christmas_point-12-dayofweek) // 7
-    elif christmas_point >= 40 and easter_point <= -47:
+    elif christmas_point >= 40 and easter_point <= -71:
         # Period of Ordinary Time after Epiphany
         season = 'Ordinary Time'
         season_url = 'https://en.wikipedia.org/wiki/Ordinary_Time'
         weekno = 1 + (christmas_point - 47) // 7
+    elif easter_point > -71 and easter_point <= -47:
+        season = 'before Lent'
+        season_url = 'https://en.wikipedia.org/wiki/Lent'
+        weekno = (easter_point + 47 - dayofweek) // 7
     elif easter_point > -47 and easter_point < -7:
         season = 'Lent'
         season_url = 'https://en.wikipedia.org/wiki/Lent'
