@@ -106,32 +106,17 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         season = 'Pentecost'
         season_url = 'https://en.wikipedia.org/wiki/Ordinary_Time'
         weekno = 0
-    elif christmas_point >= advent_sunday -28 and christmas_point < advent_sunday -21:
+    elif christmas_point >= advent_sunday -28 and christmas_point < advent_sunday:
         # "Before Advent" weeks
-        season = '4 before Advent'
+        season = 'before Advent'
         season_url = ''
-        weekno = 0
-    elif christmas_point >= advent_sunday -21 and christmas_point < advent_sunday -14:
-        # "Before Advent" weeks
-        season = '3 before Advent'
-        season_url = ''
-        weekno = 0
-    elif christmas_point >= advent_sunday -14 and christmas_point < advent_sunday -7:
-        # "Before Advent" weeks
-        season = '2 before Advent'
-        season_url = ''
-        weekno = 0
-    elif christmas_point >= advent_sunday -7 and christmas_point < advent_sunday:
-        # "Before Advent" weeks
-        season = 'Sunday next before Advent'
-        season_url = ''
-        weekno = 0
+        weekno = (christmas_point - advent_sunday) // 7
     else:
         # Period of Ordinary Time after Pentecost
         season = 'Trinity'
         season_url = 'https://en.wikipedia.org/wiki/Ordinary_Time'
         weekno = (easter_point - 56 - dayofweek) // 7
-    weekno = int(weekno) if int(weekno) > 0 else None
+    weekno = int(weekno) if int(weekno) != 0 else None
 
     # Now, look for feasts.
     feast_from_easter    = lookup_feast(easter_point)
@@ -182,8 +167,14 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         result = { 'name': '', 'prec': 1 }
 
     # Render a Week name with or without number
+    # Negative numbers are "before" weeks
     if weekno and weekno > 0:
         week = f"{season} {weekno}"
+    elif weekno and weekno < -1:
+        weekno = abs(weekno)
+        week = f"{weekno} {season}"
+    elif weekno and weekno == -1:
+        week = f"Sunday next {season}"
     else:
         week = season
 
