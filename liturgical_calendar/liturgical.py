@@ -223,7 +223,7 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
                 # The great fallback:
                 result['colour'] = 'green'
 
-    # Two special cases for Christmas-based festivals which
+    # Some special cases for Christmas-based festivals which
     # depend on the day of the week.
     if result['prec'] == 5: # An ordinary Sunday
         if christmas_point == advent_sunday:
@@ -232,6 +232,9 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         elif christmas_point == advent_sunday-7:
             result['name'] = 'Christ the King'
             result['colour'] = 'white'
+        elif christmas_point == advent_sunday-21:
+            result['name'] = 'Remembrance Sunday'
+            result['colour'] = 'red'
 
     # Set colour code
     result['colourcode'] = colour_code(result['colour'])
