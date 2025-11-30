@@ -154,7 +154,7 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
         # e.g. Advent Sunday sometimes transfers St Andrew
         # https://github.com/liturgical-app/liturgical-calendar/issues/64
         if christmas_point == advent_sunday:
-            possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Advent Sunday" })
+            possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Advent Sunday",'colour': 'purple' })
         elif christmas_point == advent_sunday-7:
             possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Christ the King", 'colour': 'white' })
         elif christmas_point == advent_sunday-21:
