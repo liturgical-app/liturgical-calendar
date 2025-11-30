@@ -144,11 +144,21 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
             if transferred_feast['prec'] != 5:
                 possibles.append(transferred_feast)
 
-    # Maybe a Sunday
+    # Handle Sundays. Every Sunday has some designation.
     # Shouldn't need to trap weekno=0 here, as the weekno increments on
     # a Sunday so it can never be less than 1 on a Sunday
     if dayofweek == 0:
         possibles.append({ 'prec': 5, 'type': 'Sunday', 'name': f"{season} {weekno}" })
+
+        # Special Sundays. Use prec 8 here so they have the ability to transfer other feasts
+        # e.g. Advent Sunday sometimes transfers St Andrew
+        # https://github.com/liturgical-app/liturgical-calendar/issues/64
+        if christmas_point == advent_sunday:
+            possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Advent Sunday" })
+        elif christmas_point == advent_sunday-7:
+            possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Christ the King", 'colour': 'white' })
+        elif christmas_point == advent_sunday-21:
+            possibles.append({ 'prec': 8, 'type': 'Sunday', 'name': "Remembrance Sunday", 'colour': 'red' })
 
     # So, which event takes priority?
     possibles = sorted(possibles, key=lambda x: x['prec'], reverse=True)
@@ -222,19 +232,6 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
             else:
                 # The great fallback:
                 result['colour'] = 'green'
-
-    # Some special cases for Christmas-based festivals which
-    # depend on the day of the week.
-    if result['prec'] == 5: # An ordinary Sunday
-        if christmas_point == advent_sunday:
-            result['name'] = 'Advent Sunday'
-            result['colour'] = 'white'
-        elif christmas_point == advent_sunday-7:
-            result['name'] = 'Christ the King'
-            result['colour'] = 'white'
-        elif christmas_point == advent_sunday-21:
-            result['name'] = 'Remembrance Sunday'
-            result['colour'] = 'red'
 
     # Set colour code
     result['colourcode'] = colour_code(result['colour'])
