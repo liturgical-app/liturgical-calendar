@@ -238,7 +238,7 @@ def lookup_feast(datecode):
         11122: { 'name': 'Cecilia', 'martyr':1, 'url': 'https://en.wikipedia.org/wiki/Cecilia_(saint)', 'prec':3},
         11123: { 'name': 'Clement', 'url': 'https://en.wikipedia.org/wiki/Pope_Clement_I', 'prec':4},
         11125: { 'name': 'Catherine', 'martyr':1, 'url': 'https://en.wikipedia.org/wiki/Catherine_of_Alexandria', 'prec':3},
-        11130: { 'name': 'Andrew the Apostle', 'url': 'https://en.wikipedia.org/wiki/Saint_Andrew', 'prec':7},
+        11130: { 'name': 'Andrew the Apostle', 'martyr':1, 'url': 'https://en.wikipedia.org/wiki/Saint_Andrew', 'prec':7},
 
         11201: { 'name': 'Charles de Foucauld', 'url': 'https://en.wikipedia.org/wiki/Charles_de_Foucauld', 'prec':3},
         11203: { 'name': 'Francis Xavier', 'url': 'https://en.wikipedia.org/wiki/Francis_Xavier', 'prec':3},
