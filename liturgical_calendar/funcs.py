@@ -120,7 +120,8 @@ def add_delta_days(days: int) -> tuple:
 
 def colour_code(colour: str) -> str:
     """
-    Accept a colour name and return a hex colour code
+    Accept a colour name and return a hex colour code,
+    intended for use for display on a web page
 
     Parameters
     ----------
@@ -138,6 +139,31 @@ def colour_code(colour: str) -> str:
         'purple': '#664fa6',
         'green': '#279942',
         'not given': '#000000'
+    }
+
+    return codes.get(colour)
+
+def colour_code_rgbw(colour: str) -> tuple:
+    """
+    Accept a colour name and return a RGBW colour code,
+    intended for use for display on an RGBW smart lamp
+
+    Parameters
+    ----------
+      colour: str
+        The name of a colour
+    Return
+    ------
+      code: tuple
+        The corresponding RGBW code for the named colour
+    """
+    codes = {
+        'white': [0, 0, 0, 255],
+        'red': [255, 255, 255, 0],
+        'rose': [255, 114, 177, 48],
+        'purple': [86, 5, 255, 0],
+        'green': [7, 255, 15, 0],
+        'not given': [0, 0, 0, 0]
     }
 
     return codes.get(colour)

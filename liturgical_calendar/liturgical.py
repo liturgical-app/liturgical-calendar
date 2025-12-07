@@ -6,7 +6,7 @@ tradition of the Church of England.
 
 import sys
 from datetime import datetime, date
-from .funcs import get_easter, get_advent_sunday, date_to_days, day_of_week, add_delta_days, colour_code
+from .funcs import get_easter, get_advent_sunday, date_to_days, day_of_week, add_delta_days, colour_code, colour_code_rgbw
 from .feasts import lookup_feast
 
 ##########################################################################
@@ -235,6 +235,7 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
 
     # Set colour code
     result['colourcode'] = colour_code(result['colour'])
+    result['colourcode_rgbw'] = colour_code_rgbw(result['colour'])
 
     # Ember days
     result['ember'] = 0
