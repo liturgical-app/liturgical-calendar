@@ -77,6 +77,14 @@ dayinfo = liturgical_calendar('YYYY-MM-DD')
 print(dayinfo['colour'])
 ```
 
+## Development
+
+This Python project is managed with Poetry. For local testing without installing, run
+
+```console
+poetry run liturgical_colour
+```
+
 ## Issues
 
 If you find bugs (either in the code or in the calendar data), please
