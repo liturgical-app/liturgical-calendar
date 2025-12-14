@@ -195,7 +195,6 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
     # Append season info regardless
     result['season'] = season
     result['season_url'] = season_url
-    result['weekno'] = weekno
     result['week'] = week
     result['date'] = f_date
 
