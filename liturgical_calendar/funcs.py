@@ -159,7 +159,7 @@ def colour_code_rgbw(colour: str) -> tuple:
     """
     codes = {
         'white': (0, 0, 0, 255),
-        'red': (255, 255, 255, 0),
+        'red': (255, 0, 0, 0),
         'rose': (255, 114, 177, 48),
         'purple': (86, 5, 255, 0),
         'green': (7, 255, 15, 0),
