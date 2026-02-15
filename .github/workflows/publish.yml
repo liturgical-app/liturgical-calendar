@@ -24,7 +24,7 @@ jobs:
         with:
           virtualenvs-create: true
       - name: Bump poetry version
-        run: poetry version ${{ github.event.inputs.version }}
+        run: poetry version ${GITHUB_REF_NAME}
       - name: Mint token
         id: mint
         uses: tschm/token-mint-action@v1.0.3
