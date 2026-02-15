@@ -80,7 +80,7 @@ print(dayinfo['colour'])
 This Python project is managed with Poetry. For local testing without installing, run
 
 ```console
-poetry run liturgical_colour
+poetry run liturgical_calendar
 ```
 
 ## Issues
