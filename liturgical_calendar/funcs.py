@@ -117,6 +117,24 @@ def add_delta_days(days: int) -> tuple:
     end_date = epoch + timedelta(days=days)
     return end_date.year, end_date.month, end_date.day
 
+def sunday_name(season: str, weekno: int) -> str:
+    """
+    Docstring for sunday_name
+    
+    :param season: Name of the liturgical season
+    :type season: str
+    :param weekno: Number of the week
+    :type weekno: int
+    :return: Rendered name of the Sunday
+    :rtype: str
+    """
+    if weekno > 0:
+        sunday = f"{season} {weekno}"
+    elif weekno < 1:
+        weekno = abs(weekno)
+        sunday = f"{weekno} {season}"
+
+    return sunday
 
 def colour_code(colour: str) -> str:
     """

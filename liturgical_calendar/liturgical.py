@@ -6,7 +6,7 @@ tradition of the Church of England.
 
 import sys
 from datetime import datetime, date
-from .funcs import get_easter, get_advent_sunday, date_to_days, day_of_week, add_delta_days, colour_code, colour_code_rgbw
+from .funcs import get_easter, get_advent_sunday, date_to_days, day_of_week, add_delta_days, colour_code, colour_code_rgbw, sunday_name
 from .feasts import lookup_feast
 
 ##########################################################################
@@ -148,7 +148,7 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
     # Shouldn't need to trap weekno=0 here, as the weekno increments on
     # a Sunday so it can never be less than 1 on a Sunday
     if dayofweek == 0:
-        possibles.append({ 'prec': 5, 'type': 'Sunday', 'name': f"{season} {weekno}" })
+        possibles.append({ 'prec': 5, 'type': 'Sunday', 'name': sunday_name(season, weekno)})
 
         # Special Sundays. Use prec 8 here so they have the ability to transfer other feasts
         # e.g. Advent Sunday sometimes transfers St Andrew
