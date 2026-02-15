@@ -23,11 +23,8 @@ jobs:
         uses: snok/install-poetry@v1.2.1
         with:
           virtualenvs-create: true
-      - name: Parse the git tag
-        id: get_tag
-        run: echo ::set-output name=TAG::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: Bump poetry version
-        run: poetry version ${{ steps.get_tag.outputs.TAG }}
+        run: poetry version ${{ github.event.inputs.version }}
       - name: Mint token
         id: mint
         uses: tschm/token-mint-action@v1.0.3
