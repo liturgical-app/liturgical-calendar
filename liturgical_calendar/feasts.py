@@ -23,7 +23,7 @@ def lookup_feast(datecode):
         # 7 Dedication Festival, the first Sunday in October or the Last Sunday after Trinity, if date unknown
 
         # Dates relative to Easter are encoded as the number of days after Easter.
-        -47: { 'name': 'Shrove Tuesday', 'colour':'white', 'url': 'https://en.wikipedia.org/wiki/Shrove_Tuesday', 'prec':7 },
+        -47: { 'name': 'Shrove Tuesday', 'colour':'green', 'url': 'https://en.wikipedia.org/wiki/Shrove_Tuesday', 'prec':7 },
         -46: { 'name': 'Ash Wednesday', 'colour':'purple', 'url': 'https://en.wikipedia.org/wiki/Ash_Wednesday', 'prec':9, 'type': 'Principal Holy Day' },
         -7: { 'name': 'Palm Sunday', 'colour':'red', 'url': 'https://en.wikipedia.org/wiki/Palm_Sunday', 'prec':5},
         -6: { 'name': 'Holy Monday', 'colour':'red', 'url': 'https://en.wikipedia.org/wiki/Holy_Monday', 'prec':9, 'type': 'Principal Holy Day'},
