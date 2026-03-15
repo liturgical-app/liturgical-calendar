@@ -198,9 +198,15 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
     result['week'] = week
     result['date'] = f_date
 
-    # Support for special Sundays which are rose
-    if result['name'] in [ 'Advent 3', 'Lent 4' ]:
+    # Support for Refreshment Sundays, which are rose
+    if result['name'] == 'Advent 3':
         result['colour'] = 'rose'
+        result['name'] = 'Gaudete Sunday'
+        result['url'] = 'https://en.wikipedia.org/wiki/Gaudete_Sunday'
+    elif result['name'] == 'Lent 4':
+        result['colour'] = 'rose'
+        result['name'] = 'Laetare Sunday'
+        result['url'] = 'https://en.wikipedia.org/wiki/Laetare_Sunday'
 
     # If no colour is already set...
     if result.get('colour') is None:
