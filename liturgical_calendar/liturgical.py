@@ -145,9 +145,9 @@ def liturgical_calendar(s_date: str, transferred: bool = False):
                 possibles.append(transferred_feast)
 
     # Handle Sundays. Every Sunday has some designation.
-    # Shouldn't need to trap weekno=0 here, as the weekno increments on
-    # a Sunday so it can never be less than 1 on a Sunday
-    if dayofweek == 0:
+    # weekno increments on a Sunday, so normally it can never be less than 1 on a Sunday
+    # except for seasons like Holy Week which don't have numbered Sundays, where weekno=None
+    if weekno and dayofweek == 0:
         possibles.append({ 'prec': 5, 'type': 'Sunday', 'name': sunday_name(season, weekno)})
 
         # Special Sundays. Use prec 8 here so they have the ability to transfer other feasts
