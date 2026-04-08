@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install Poetry
-        uses: snok/install-poetry@v1.2.1
+        uses: snok/install-poetry@v1.4.1
         with:
           virtualenvs-create: true
       - name: Bump poetry version
