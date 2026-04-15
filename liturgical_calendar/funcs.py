@@ -128,6 +128,7 @@ def sunday_name(season: str, weekno: int) -> str:
     :return: Rendered name of the Sunday
     :rtype: str
     """
+    sunday = None
     if not weekno:
         sunday = season
     elif weekno > 0:
