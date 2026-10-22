@@ -8,7 +8,7 @@ packages = [{include = "liturgical_calendar"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-python-dateutil = "^2.8.2"
+python-dateutil = "^3.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pylint = ">=3"
